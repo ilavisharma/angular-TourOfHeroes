@@ -1,18 +1,13 @@
 <h2>My Heroes</h2>
 <div class="ui big link list">
-  <div
-    *ngFor="let hero of heroes"
-    (click)="onSelected(hero)"
-    [class.active]="hero === selectedHero"
-    class="item"
-  >
-    <span>
-      {{ hero.id }}
-    </span>
-    <span>
-      {{ hero.name }}
-    </span>
+  <div *ngFor="let hero of heroes" class="item">
+    <a routerLink="/detail/{{ hero.id }}">
+      <span>
+        {{ hero.id }}
+      </span>
+      <span>
+        {{ hero.name }}
+      </span>
+    </a>
   </div>
 </div>
-
-<app-hero-detail [hero]="selectedHero"></app-hero-detail>
