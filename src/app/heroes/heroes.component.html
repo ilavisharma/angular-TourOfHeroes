@@ -1,4 +1,4 @@
-<h2>My Heroes</h2>
+<h2 class="ui header">My Heroes</h2>
 <div class="ui big link list">
   <div *ngFor="let hero of heroes" class="item">
     <a routerLink="/detail/{{ hero.id }}">
@@ -9,16 +9,19 @@
         {{ hero.name }}
       </span>
     </a>
-    <button class="delete" title="delete hero" (click)="delete(hero)">x</button>
+    <button class="ui red button" title="delete hero" (click)="delete(hero)">
+      x
+    </button>
   </div>
 </div>
-<div>
-  <label
-    >Hero name:
-    <input #heroName />
-  </label>
-  <!-- (click) passes input value to add() and then clears the input -->
-  <button (click)="add(heroName.value); heroName.value = ''">
-    add
-  </button>
+<div class="container">
+  <div class="ui action input">
+    <input #heroName placeholder="Enter hero name" />
+    <button
+      class="ui primary button"
+      (click)="add(heroName.value); heroName.value = ''"
+    >
+      Add Hero
+    </button>
+  </div>
 </div>

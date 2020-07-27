@@ -1,11 +1,14 @@
 <div class="ui container">
-  <h1>
+  <h1 class="ui header center aligned">
     {{ title }}
   </h1>
-  <nav>
-    <a routerLink="/heroes">Heroes</a>
-    <a routerLink="/dashboard">Dashboard</a>
-  </nav>
+  <div class="ui two item menu">
+    <a class="item" routerLink="/heroes" routerLinkActive="active">Heroes</a>
+    <a class="item" routerLink="/dashboard" routerLinkActive="active"
+      >Dashboard</a
+    >
+  </div>
   <router-outlet></router-outlet>
+  <hr />
   <app-messages></app-messages>
 </div>
